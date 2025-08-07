@@ -20,8 +20,8 @@ export async function buscarControlesPorTexto(texto) {
 
     return result.recordset;
   } catch (error) {
-  console.error('❌ Error al conectar a la base de datos:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
-  return null;
+    console.error('❌ Error al conectar a la base de datos:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+    return null;
 
   }
 }

@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { buscarControlesPorTexto } from './userRepository.js';
+import { buscarControlesPorTexto } from './UserRepository.js';
 import { getConnection } from './db.js';
 
 getConnection();
