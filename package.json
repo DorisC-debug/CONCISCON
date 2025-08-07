@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
@@ -8,7 +9,7 @@
     "live-server": "^1.2.2"
   },
   "scripts": {
-  "dev": "live-server client"
+    "start": "node server/index.js",
+    "dev": "live-server client"
   }
 }
-  
