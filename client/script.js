@@ -8,7 +8,7 @@ async function buscarControles() {
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/api/controles?texto=${encodeURIComponent(texto)}`);
+    const res = await fetch(`https://conciscon.onrender.com/api/controles?texto=${encodeURIComponent(texto)}`);
     const data = await res.json();
 
     const resultsDiv = document.getElementById('results');
@@ -53,7 +53,7 @@ async function filtrarPorPalabraClave() {
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/api/controles?texto=${encodeURIComponent(texto)}`);
+    const res = await fetch(`https://conciscon.onrender.com/api/controles?texto=${encodeURIComponent(texto)}`);
     const data = await res.json();
 
     if (data.length === 0) {
