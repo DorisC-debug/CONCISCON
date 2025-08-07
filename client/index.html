@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CONCISCON - Consultas CIS y Equipos</title>
+  <script src="script.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/logo.jpg" alt="Logo CONCISCON" />
+    </div>
+    <h1>CONCISCON</h1>
+    <p>Consulta de Salvaguardas</p>
+  </header>
+
+  <main class="content-container">
+    <section class="left-panel">
+      <div class="search-section">
+        <input type="text" id="riskInput" placeholder="Describe un riesgo, palabra clave o control..." />
+        <button onclick="buscarControles()"> Buscar controles</button>
+      </div>
+
+      <div class="filters">
+        <input type="text" id="keywordFilter" placeholder="Filtrar por palabra clave..." oninput="filtrarPorPalabraClave()" />
+        <button onclick="mostrarEquipos()"> Equipos recomendados</button>
+      </div>
+    </section>
+
+    <section class="right-panel">
+      <div id="results"></div>
+
+      <div id="equipos" class="hidden">
+        <h2>🔧 Equipos Recomendados</h2>
+        <ul id="listaEquipos"></ul>
+        <div class="volver-inicio">
+            <button onclick="volverInicio()" >Volver a inicio</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CONCISCON | Proyecto técnico universitario</p>
+  </footer>
+</body>
+
+</html>
