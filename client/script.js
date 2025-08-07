@@ -23,12 +23,10 @@ async function buscarControles() {
       const div = document.createElement('div');
       div.classList.add('control-card');
       div.innerHTML = `
-        <h3>${item.SalvaguardaID} - ${item.NombreControl}</h3>
-        <p><strong>Salvaguarda:</strong> ${item.NombreSalvaguarda}</p>
+        <h3>${item.SalvaguardaID} - ${item.NombreSalvaguarda}</h3>
         <p><strong>Descripción:</strong> ${item.DescripcionSalvaguarda}</p>
+        <p><strong>Control:</strong> ${item.ControlID} -  ${item.NombreControl}</p>
         <p><strong>Función:</strong> ${item.FuncionCiberseguridad}</p>
-        <p><strong>Riesgo:</strong> ${item.NombreRiesgo}</p>
-        <p><strong>Descripción del Riesgo:</strong> ${item.DescripcionRiesgo}</p>
         <p><strong>Tipo de activo:</strong> ${item.TipoActivo}</p>
         <p><strong>Grupo de Implementación:</strong> ${item.IG_Nombre}</p>
         <p><strong>Descripción de Grupo de Implementación:</strong> ${item.DescripcionIG}</p>
@@ -65,13 +63,10 @@ async function filtrarPorPalabraClave() {
       const div = document.createElement('div');
       div.classList.add('control-card');
       div.innerHTML = `
-       <h3>${item.SalvaguardaID} - ${item.NombreControl}</h3>
-        <h3>${item.NombreControl}</h3>
-        <p><strong>Salvaguarda:</strong> ${item.NombreSalvaguarda}</p>
+        <h3>${item.SalvaguardaID} - ${item.NombreSalvaguarda}</h3>
         <p><strong>Descripción:</strong> ${item.DescripcionSalvaguarda}</p>
+        <p><strong>Control:</strong> ${item.ControlID} -  ${item.NombreControl}</p>
         <p><strong>Función:</strong> ${item.FuncionCiberseguridad}</p>
-        <p><strong>Riesgo:</strong> ${item.NombreRiesgo}</p>
-        <p><strong>Descripción del Riesgo:</strong> ${item.DescripcionRiesgo}</p>
         <p><strong>Tipo de activo:</strong> ${item.TipoActivo}</p>
         <p><strong>Grupo de Implementación:</strong> ${item.IG_Nombre}</p>
         <p><strong>Descripción de Grupo de Implementación:</strong> ${item.DescripcionIG}</p>
