@@ -10,6 +10,7 @@ export async function buscarControlesPorTexto(texto) {
       .query(`
         SELECT * FROM vw_Salvaguardas_Completa
         WHERE NombreRiesgo LIKE @texto
+          OR SalvaguardaID LIKE @texto
           OR NombreSalvaguarda LIKE @texto
           OR NombreControl LIKE @texto
           OR FuncionCiberseguridad LIKE @texto
