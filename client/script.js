@@ -1,8 +1,7 @@
-// BUSCAR CONTROLES POR TEXTO GENERAL
 async function buscarControles() {
   const texto = document.getElementById('riskInput').value.trim();
 
-  if (!texto || texto.length === 0) {
+  if (!texto) {
     alert('Por favor escribe un riesgo o control.');
     return;
   }
@@ -14,18 +13,23 @@ async function buscarControles() {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
 
-    if (data.length === 0) {
-      resultsDiv.innerHTML = '<p>No se encontraron resultados.</p>';
+    const resultadosExactos = data.filter(item =>
+      item.NombreRiesgo?.toLowerCase() === texto.toLowerCase() ||
+      item.NombreControl?.toLowerCase() === texto.toLowerCase()
+    );
+
+    if (!resultadosExactos.length) {
+      resultsDiv.innerHTML = '<p>No se encontraron coincidencias exactas en Riesgo o Control.</p>';
       return;
     }
 
-    data.forEach(item => {
+    resultadosExactos.forEach(item => {
       const div = document.createElement('div');
       div.classList.add('control-card');
       div.innerHTML = `
         <h3>${item.SalvaguardaID} - ${item.NombreSalvaguarda}</h3>
         <p><strong>Descripción:</strong> ${item.DescripcionSalvaguarda}</p>
-        <p><strong>Control:</strong> ${item.ControlID} -  ${item.NombreControl}</p>
+        <p><strong>Control:</strong> ${item.ControlID} - ${item.NombreControl}</p>
         <p><strong>Función:</strong> ${item.FuncionCiberseguridad}</p>
         <p><strong>Tipo de activo:</strong> ${item.TipoActivo}</p>
         <p><strong>Riesgo:</strong> ${item.NombreRiesgo}</p>
@@ -40,6 +44,7 @@ async function buscarControles() {
     alert('Error al conectar con el servidor.');
   }
 }
+
 
 // FILTRAR POR PALABRA CLAVE
 async function filtrarPorPalabraClave() {
