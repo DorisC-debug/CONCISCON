@@ -11,7 +11,7 @@
 <body>
   <header>
     <div class="logo">
-      <img src="assets/logo.jpg" alt="Logo CONCISCON" />
+      <img src="assets/logo.jpeg" alt="Logo CONCISCON" />
     </div>
     <h1>CONCISCON</h1>
     <p>Consulta de Salvaguardas</p>
@@ -20,13 +20,13 @@
   <main class="content-container">
     <section class="left-panel">
       <div class="search-section">
-        <input type="text" id="riskInput" placeholder="Describe un riesgo, palabra clave o control..." />
+        <input type="text" id="riskInput" placeholder="Describe un riesgo o control..." />
         <button onclick="buscarControles()"> Buscar controles</button>
       </div>
 
       <div class="filters">
-        <input type="text" id="keywordFilter" placeholder="Filtrar por palabra clave..." oninput="filtrarPorPalabraClave()" />
-        <button onclick="mostrarEquipos()"> Equipos recomendados</button>
+        <input type="text" id="keywordFilter" placeholder="Filtrar por palabra clave..." />
+        <button onclick="filtrarPorPalabraClave()"> Filtrar</button>
       </div>
     </section>
 
@@ -34,7 +34,7 @@
       <div id="results"></div>
 
       <div id="equipos" class="hidden">
-        <h2>🔧 Equipos Recomendados</h2>
+        <h2>Filtrar</h2>
         <ul id="listaEquipos"></ul>
         <div class="volver-inicio">
             <button onclick="volverInicio()" >Volver a inicio</button>

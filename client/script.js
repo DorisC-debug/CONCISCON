@@ -3,7 +3,7 @@ async function buscarControles() {
   const texto = document.getElementById('riskInput').value.trim();
 
   if (!texto || texto.length === 0) {
-    alert('Por favor escribe un riesgo, palabra clave o control.');
+    alert('Por favor escribe un riesgo o control.');
     return;
   }
 
@@ -28,6 +28,8 @@ async function buscarControles() {
         <p><strong>Control:</strong> ${item.ControlID} -  ${item.NombreControl}</p>
         <p><strong>Función:</strong> ${item.FuncionCiberseguridad}</p>
         <p><strong>Tipo de activo:</strong> ${item.TipoActivo}</p>
+        <p><strong>Riesgo:</strong> ${item.NombreRiesgo}</p>
+        <p><strong>Descripción de Riesgo:</strong> ${item.DescripcionRiesgo}</p>
         <p><strong>Grupo de Implementación:</strong> ${item.IG_Nombre}</p>
         <p><strong>Descripción de Grupo de Implementación:</strong> ${item.DescripcionIG}</p>
       `;
@@ -44,11 +46,11 @@ async function filtrarPorPalabraClave() {
   const texto = document.getElementById('keywordFilter').value.trim();
   const resultsDiv = document.getElementById('results');
   resultsDiv.innerHTML = '';
-
-  if (!texto || texto.length === 0) {
+    if (!texto || texto.length === 0) {
     alert('Por favor escribe una palabra clave para filtrar.');
     return;
   }
+
 
   try {
     const res = await fetch(`https://conciscon.onrender.com/api/controles?texto=${encodeURIComponent(texto)}`);
@@ -68,6 +70,8 @@ async function filtrarPorPalabraClave() {
         <p><strong>Control:</strong> ${item.ControlID} -  ${item.NombreControl}</p>
         <p><strong>Función:</strong> ${item.FuncionCiberseguridad}</p>
         <p><strong>Tipo de activo:</strong> ${item.TipoActivo}</p>
+          <p><strong>Riesgo:</strong> ${item.NombreRiesgo}</p>
+        <p><strong>Descripción de Riesgo:</strong> ${item.DescripcionRiesgo}</p>
         <p><strong>Grupo de Implementación:</strong> ${item.IG_Nombre}</p>
         <p><strong>Descripción de Grupo de Implementación:</strong> ${item.DescripcionIG}</p>
       `;
