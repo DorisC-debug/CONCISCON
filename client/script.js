@@ -13,17 +13,19 @@ async function buscarControles() {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
 
-    const resultadosExactos = data.filter(item =>
-      item.NombreRiesgo?.toLowerCase() === texto.toLowerCase() ||
-      item.NombreControl?.toLowerCase() === texto.toLowerCase()
+    
+    const resultadosCoincidentes = data.filter(item =>
+      item.NombreRiesgo?.toLowerCase().includes(texto.toLowerCase()) ||
+      item.DescripcionRiesgo?.toLowerCase().includes(texto.toLowerCase()) ||
+      item.NombreControl?.toLowerCase().includes(texto.toLowerCase())
     );
 
-    if (!resultadosExactos.length) {
-      resultsDiv.innerHTML = '<p>No se encontraron coincidencias exactas en Riesgo o Control.</p>';
+    if (!resultadosCoincidentes.length) {
+      resultsDiv.innerHTML = '<p>No se encontraron coincidencias para riesgo o control.</p>';
       return;
     }
 
-    resultadosExactos.forEach(item => {
+    resultadosCoincidentes.forEach(item => {
       const div = document.createElement('div');
       div.classList.add('control-card');
       div.innerHTML = `
@@ -44,7 +46,6 @@ async function buscarControles() {
     alert('Error al conectar con el servidor.');
   }
 }
-
 
 // FILTRAR POR PALABRA CLAVE
 async function filtrarPorPalabraClave() {
