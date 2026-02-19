@@ -16,7 +16,7 @@ CONCISCON is a web application designed to describe controls, safeguards, functi
 ## Technologies
 
 - **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Node.js
+- **Backend:** Node.js, SQL Server
 - **Architecture:** Client-server structure
 
 ## Installation
